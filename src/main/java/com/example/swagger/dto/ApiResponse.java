@@ -1,0 +1,13 @@
+package com.example.swagger.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+public class ApiResponse<T> {
+    private boolean isSuccess;
+    private int code;
+    private String message;
+    private T result;
+}
