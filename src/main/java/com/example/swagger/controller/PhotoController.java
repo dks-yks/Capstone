@@ -21,7 +21,7 @@ public class PhotoController {
         this.photoService = photoService;
     }
 
-    @Operation(summary = "사진 업로드", description = "새로운 사진을 업로드합니다.")
+    @Operation(summary = "사진 업로드")
     @PostMapping("/upload")
     public ResponseEntity<PhotoResponseDTO> uploadPhoto(@RequestBody Photo photo) {
         Photo uploadedPhoto = photoService.uploadPhoto(photo);
@@ -41,7 +41,7 @@ public class PhotoController {
         return ResponseEntity.ok(responseDTO);
     }
 
-    @Operation(summary = "사진 조회", description = "특정 사용자의 사진을 조회합니다.")
+    @Operation(summary = "사진 조회")
     @GetMapping
     public ResponseEntity<PhotoResponseDTO> getPhoto(@RequestParam int userId) {
         Optional<Photo> photo = photoService.getPhoto(userId);
@@ -65,7 +65,7 @@ public class PhotoController {
         return ResponseEntity.notFound().build();
     }
 
-    @Operation(summary = "사진 수정", description = "사진의 정보를 수정합니다.")
+    @Operation(summary = "사진 수정")
     @PatchMapping
     public ResponseEntity<PhotoResponseDTO> updatePhoto(@RequestBody Photo updatedPhoto) {
         Optional<Photo> photo = photoService.updatePhoto(updatedPhoto);

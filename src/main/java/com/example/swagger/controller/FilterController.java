@@ -23,7 +23,7 @@ public class FilterController {
         this.filterService = filterService;
     }
 
-    @Operation(summary = "카테고리 목록 조회", description = "사진 카테고리 목록을 조회합니다.")
+    @Operation(summary = "카테고리 목록 조회")
     @GetMapping("/category")
     public ResponseEntity<ApiResponse<List<Category>>> getCategoryList() {
         List<Category> categories = filterService.getCategories();
@@ -31,7 +31,7 @@ public class FilterController {
         return ResponseEntity.ok(response);
     }
 
-    @Operation(summary = "정렬순 목록 조회", description = "정렬 옵션 목록을 조회합니다.")
+    @Operation(summary = "정렬순 목록 조회")
     @GetMapping("/sort")
     public ResponseEntity<ApiResponse<List<Sort>>> getSortList() {
         List<Sort> sortOptions = filterService.getSortOptions();
@@ -39,7 +39,7 @@ public class FilterController {
         return ResponseEntity.ok(response);
     }
 
-    @Operation(summary = "태그 목록 조회", description = "태그 목록을 조회합니다.")
+    @Operation(summary = "태그 목록 조회")
     @GetMapping("/tags")
     public ResponseEntity<ApiResponse<List<CustomTag>>> getTagList() {
         List<CustomTag> tags = filterService.getTags();  // CustomTag 사용

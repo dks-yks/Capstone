@@ -18,13 +18,13 @@ public class ChatController {
     @Autowired
     private ChatService chatService;
 
-    @Operation(summary = "채팅 메시지 전송", description = "사용자가 채팅방에 메시지를 전송합니다.")
+    @Operation(summary = "채팅 메시지 전송")
     @PostMapping
     public ChatMessageResponseDTO sendChatMessage(@RequestBody ChatMessageRequestDTO requestDTO) {
         return chatService.sendMessage(requestDTO);
     }
 
-    @Operation(summary = "채팅 내역 조회", description = "채팅방의 메시지 내역을 조회합니다.")
+    @Operation(summary = "채팅 내역 조회")
     @GetMapping
     public List<ChatMessageResponseDTO> getChatHistory() {
         return chatService.getChatHistory();

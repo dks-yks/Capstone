@@ -21,7 +21,7 @@ public class ReportController {
         this.reportService = reportService;
     }
 
-    @Operation(summary = "신고 접수", description = "신고를 접수합니다.")
+    @Operation(summary = "신고 접수")
     @PostMapping
     public ResponseEntity<ApiResponse<Report>> createReport(@RequestBody Report report) {
         Report createdReport = reportService.createReport(report);
@@ -29,7 +29,7 @@ public class ReportController {
         return ResponseEntity.ok(response);
     }
 
-    @Operation(summary = "신고 내역 조회", description = "신고 내역을 조회합니다.")
+    @Operation(summary = "신고 내역 조회")
     @GetMapping
     public ResponseEntity<ApiResponse<List<Report>>> getReportList() {
         List<Report> reports = reportService.getReports();
